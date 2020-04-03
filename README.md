@@ -5,7 +5,7 @@ fiber_limiter using [redis](https://github.com/go-redis/redis) as store for rate
 ### Install
 ```
 go get -u github.com/gofiber/fiber
-go get -u github.com/shareed2k/go_limiter
+go get -u github.com/shareed2k/fiber_limiter
 ```
 ### Example
 ```go
