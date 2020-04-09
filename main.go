@@ -12,9 +12,9 @@ import (
 )
 
 const (
-	SimpleAlgorithm  = "simple"
-	GCRAAlgorithm    = "gcra"
-	DefaultKeyPrefix = "fiber_limiter"
+	SlidingWindowAlgorithm = go_limiter.SlidingWindowAlgorithm
+	GCRAAlgorithm          = go_limiter.GCRAAlgorithm
+	DefaultKeyPrefix       = "fiber_limiter"
 )
 
 // Config ...
@@ -38,8 +38,8 @@ type Config struct {
 	Message string
 
 	// Algorithm
-	// Default: simple
-	Algorithm string
+	// Default: sliding window
+	Algorithm uint
 
 	// Prefix
 	// Default:
@@ -99,8 +99,8 @@ func New(config Config) func(*fiber.Ctx) {
 		}
 	}
 
-	if config.Algorithm == "" {
-		config.Algorithm = SimpleAlgorithm
+	if config.Algorithm == 0 {
+		config.Algorithm = SlidingWindowAlgorithm
 	}
 
 	if config.Period == 0 {

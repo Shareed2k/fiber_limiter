@@ -1,6 +1,6 @@
 ## fiber_limiter is middleware for fiber framework 
 
-fiber_limiter using [redis](https://github.com/go-redis/redis) as store for rate limit with two algorithms for choosing simple, gcra [leaky bucket](https://en.wikipedia.org/wiki/Leaky_bucket)
+fiber_limiter using [redis](https://github.com/go-redis/redis) as store for rate limit with two algorithms for choosing sliding window, gcra [leaky bucket](https://en.wikipedia.org/wiki/Leaky_bucket)
 
 ### Install
 ```
